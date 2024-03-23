@@ -1,113 +1,187 @@
 import Image from "next/image";
 
-export default function Home() {
+function Abstract() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+    <div className="abstract">
+      <i>
+        {`I'm not trying to be like Satoshi Nakamoto, I just wish for people to judge me
+        based on my work and nothing else.`}
+      </i>
+    </div>
+  );
+}
+
+function TableOfContents() {
+  return (
+    <nav role="navigation" className="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li>
+          <a href="#projects">Projects</a>
+          <ol>
+            <li>
+              <a href="#virtuoso-club">Virtuoso Club (2024)</a>
+            </li>
+            <li>
+              <a href="#blockalizer">Blockalizer (2023)</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="#work-history">Work History</a>
+          <ol>
+            <li>
+              <a href="#coinbase">Coinbase (2020-2022)</a>
+            </li>
+            <li>
+              <a href="#amazon-microsoft">Amazon & Microsoft (2015-2018)</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="#writings">Writings & Research</a>
+          <ol>
+            <li>
+              <a href="#account-abstraction">
+                A complete guide on account abstraction
+              </a>
+            </li>
+            <li>
+              <a href="#game-theory">Game theory and consumer crypto</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ol>
+    </nav>
+  );
+}
+
+function Content() {
+  return (
+    <main>
+      <article>
+        <h2 id="projects">Projects</h2>
+        <h3 id="virtuoso-club">Virtuoso Club</h3>
+        <p>
+          I&apos;m currently building{" "}
+          <a href="https://virtuoso.club/" target="_blank">
+            Virtuoso Club
+          </a>
+          : a web3 chess puzzle platform designed to be open and transparent.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+        <figure>
+          <Image
+            src="/virtuoso-club.png"
+            alt="Virtuoso Club"
+            width="1000"
+            height="1000"
+          />
+        </figure>
+        <h3 id="blockalizer">Blockalizer</h3>
+        <p>
+          Evan Luza (Cool Cats founder and brand designer) and I teamed up to
+          build{" "}
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://opensea.io/collection/blockalizer-chroma"
             target="_blank"
-            rel="noopener noreferrer"
           >
-            By{" "}
+            Blockalizer
+          </a>
+          , a generative art project that issues NFT based on your onchain
+          history.
+        </p>
+        <figure>
+          <Image
+            src="/blockalizer.webp"
+            alt="Blockalizer"
+            width="1000"
+            height="1000"
+          />
+        </figure>
+        <h2 id="work-history">Work History</h2>
+        <h3 id="coinbase">Coinbase</h3>
+        <p>
+          I was responsible for building onramp integrations. I worked on
+          Braintree (Paypal) integration as well as Apple Pay and Google Pay.
+          Hooking up to 3rd party APIs is easy, but doing them at scale is
+          challenging. Tiniest of bugs can result in millions of dollars of lost
+          revenue and brand deterioration. During my time, I also pitched an
+          idea to the executive leadership team to build a competitor product to
+          Moonpay - later called Coinbase Pay.
+        </p>
+        <h3 id="amazon-microsoft">Amazon & Microsoft</h3>
+        <p>
+          I started my career at Microsoft and later transitioned to Amazon.
+          Both giant organizations with lots of hierarchy and process. Despite
+          all the criticism corporations get, they teach you how to be concise
+          with communication and how to coordinate within a team effectively. I
+          got familiar with best practices in software development; ranging from
+          naming variables all the way to deploying code reliably.
+        </p>
+        <h2 id="writings">Writings & Research</h2>
+        <h3 id="account-abstraction">
+          A complete guide on account abstraction
+        </h3>
+        <p>
+          For the longest time, crypto had limited use-cases. Big part of this
+          was simply UX constraints - long wait times, wallet awkwardness, poor
+          onboarding. We have come a long way since.{" "}
+          <a
+            href="https://medium.com/@0xasdf_eth/a-complete-guide-on-account-abstraction-b885542e7552"
+            target="_blank"
+          >
+            In this article
+          </a>
+          , I explore how wallets will continue to transform in the coming years
+          and how they&apos;ll evolve.
+        </p>
+        <h3 id="game-theory">Game Theory and Consumer Crypto</h3>
+        <p>
+          Crypto has disrupted money and financial markets, but I believe that
+          we will soon see its use-cases expand to the mainstream Internet
+          products - which will benefit from better economic models.{" "}
+          <a
+            href="https://medium.com/@0xasdf_eth/game-theory-and-consumer-crypto-b044c97ad7b3"
+            target="_blank"
+          >
+            In this article
+          </a>
+          , I expand on how products broadly on the Internet can benefit from
+          adopting web3 primitives.
+        </p>
+        <h2 id="contact">Contact</h2>
+        <p>hi@asdf.codes</p>
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <a href="https://twitter.com/0xasdf_eth" target="_blank">
+            <Image src="/twitter.png" alt="Twitter" width="20" height="20" />
+          </a>
+          <a
+            href="https://warpcast.com/0xasdf"
+            target="_blank"
+            style={{ marginLeft: "5px" }}
+          >
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src="/farcaster.png"
+              alt="Farcaster"
+              width="20"
+              height="20"
             />
           </a>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </article>
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <>
+      <Abstract />
+      <TableOfContents />
+      <Content />
+    </>
   );
 }
